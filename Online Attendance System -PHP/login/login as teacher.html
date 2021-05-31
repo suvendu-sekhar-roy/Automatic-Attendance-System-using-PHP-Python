@@ -1,0 +1,61 @@
+<html>
+  <head>
+  
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Automatic Attendance System</title>
+    <meta name="keywords" content="Automatic Attendance System" />
+    <meta name="description" content="Developed By RKMGEC team" />
+
+    <style>
+      .aa {
+        width: 450px;
+        height: 350px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+  </head>
+
+  <body>
+    <img src="../assets/images/logo.png" class="logo" />
+
+    <nav style="font-size: 6mm;">
+      <a href="../index.html">Back to Home</a>
+    </nav>
+
+    <div class="aa" style="background-color: rgba(0, 0, 0, 0.5)">
+      <form method="post" action="../login/login as teacher.php">
+        <h1 style="color: skyblue">LOGIN as Teacher</h1>
+        Email: <input
+          type="text"
+          name="email"
+          placeholder="Please Enter email...."
+          required
+        /><br /><br />
+        Password: <input
+          type="password"
+          name="pass"
+          placeholder="Please Enter Password...."
+          required
+        /><br /><br />
+        <input
+          type="submit"
+          value="LOGIN"
+          name="submit"
+          class="btn_login"
+          style="background-color: skyblue"
+        />
+        <p style="font-size: 25px">
+          New User then,Click <a href="../signup/signup as teacher.html">here</a> to Sign
+          in.
+        </p>
+      </form>
+    </div>
+    </body>
+</html>
