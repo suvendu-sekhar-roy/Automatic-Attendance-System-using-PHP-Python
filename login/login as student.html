@@ -1,0 +1,64 @@
+<html>
+  <head>
+   
+    
+    <title>Automatic Attendance System</title>
+    <meta name="keywords" content="Automatic Attendance System" />
+    <meta name="description" content="RKMGEC team" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+    
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <!--
+    <script>
+      $(document).ready(function () {
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+    -->
+    <style>
+      .aa {
+        width: 450px;
+        height: 400px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="../assets/images/logo.png" class="logo" />
+    <br><br>
+    <!--<div id="nav-placeholder"></div>-->
+    <nav style="font-size: 6mm;">
+      <a href="../index.html">Back to Home</a>
+    </nav>
+
+    <div class="aa" style="background-color: rgba(0, 0, 0, 0.5)">
+      <form method="post" action="login as student.php">
+        <h1 style="color: skyblue">LOGIN as Student</h1>
+        Roll: <input
+          type="text"
+          name="roll"
+          placeholder="Please Enter Roll no...."
+          required
+        /><br /><br />
+        Password: <input
+          type="password"
+          name="pass"
+          placeholder="Please Enter Password...."
+          required
+        /><br /><br />
+        <input
+          type="submit"
+          value="LOGIN"
+          name="submit"
+          class="btn_login"
+          style="background-color: skyblue"
+        />
+        <p style="font-size: 25px">
+          New User then,Click <a href="../signup/signup as student.html">here</a> to Sign
+          in.
+        </p>
+      </form>
+    </div>
+ </body>
+</html>
