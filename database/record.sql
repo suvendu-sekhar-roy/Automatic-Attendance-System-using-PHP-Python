@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2021 at 03:43 PM
+-- Generation Time: Jun 16, 2021 at 09:42 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `record` (
-  `Roll` bigint(20) NOT NULL,
-  `Date` varchar(20) NOT NULL,
-  `Time` varchar(20) NOT NULL
+  `Roll` bigint(10) NOT NULL,
+  `Date` date NOT NULL,
+  `Time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -38,9 +38,9 @@ CREATE TABLE `record` (
 --
 
 INSERT INTO `record` (`Roll`, `Date`, `Time`) VALUES
-(35000117025, '21-05-2021', '15:13:55'),
-(35000117025, '28-05-2021', '20:36:54'),
-(35000117025, '29-05-2021', '10:48:42');
+(35000117025, '2021-06-13', '23:16:29'),
+(35000117025, '2021-06-15', '21:09:14'),
+(35000117025, '2021-06-16', '11:22:59');
 
 --
 -- Indexes for dumped tables
