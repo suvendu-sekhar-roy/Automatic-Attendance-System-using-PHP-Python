@@ -1,12 +1,11 @@
 
 import cv2
-import numpy as np
 import face_recognition as fr
 import os
 import pickle
 #Create a list, which can get the images from our folder aumatically
 
-path= "C:\\Users\\SSR\\Desktop\\New folder"  #set my path
+path= "../Automatic-Attendance-System-using-PHP-Python/uploads"  #set my path
 images=[]
 face_names=[]
 myList=os.listdir(path) #Crab the list of images in this folder
