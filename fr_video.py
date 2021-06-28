@@ -12,7 +12,7 @@ known_face_encoding=pickle.load(open(file_name,'rb'))
 #pred_result= loaded_model.predict([[]])
 #Create a list, which can get the images from our folder aumatically
 
-path= "../Automatic-Attendance-System-using-PHP-Python/uploads"  #set my path
+path= "../Automatic-Attendance-System-using-PHP-Python-main/uploads"  #set my path
 #images=[]
 face_names=[]
 myList=os.listdir(path) #Crab the list of images in this folder
@@ -87,12 +87,18 @@ while True:
             name=face_names[first_match_index]
             cv2.rectangle(img,(left,top),(right,bottom),(0,255,0),2)
             cv2.putText(img,name,(left+6, bottom+10),cv2.FONT_HERSHEY_COMPLEX,0.5,(255,255,255),2)
-
+            
+            txt="Eneter 'q' to close the window"
+            cv2.putText(img,txt,(0,30),cv2.FONT_HERSHEY_PLAIN,1.5,(0,255,255),2)
+            
             name=int(name)
             markAttendance(name)
         else:
             cv2.rectangle(img,(left,top),(right,bottom),(0,0,255),2)
             cv2.putText(img,name,(left+6, bottom+10),cv2.FONT_HERSHEY_COMPLEX,0.5,(255,255,255),2)
+            
+            txt="Eneter 'q' to close the window"
+            cv2.putText(img,txt,(0,30),cv2.FONT_HERSHEY_PLAIN,1.5,(0,255,255),2)
 
     cv2.imshow("Webcam",img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
