@@ -5,7 +5,7 @@ import os
 import pickle
 #Create a list, which can get the images from our folder aumatically
 
-path= "../Automatic-Attendance-System-using-PHP-Python/uploads"  #set my path
+path= "../Automatic-Attendance-System-using-PHP-Python-main/uploads"  #set my path
 images=[]
 face_names=[]
 myList=os.listdir(path) #Crab the list of images in this folder
@@ -15,9 +15,9 @@ print(myList)
 for i in myList:
     curImg=cv2.imread(f"{path}\\{i}") #Collecting all the images from given path one by one
     images.append(curImg)
-    face_names.append(os.path.splitext(i)[0])    #Seperating the extensions of the image files and only get the names 
+    #face_names.append(os.path.splitext(i)[0])    #Seperating the extensions of the image files and only get the names 
 
-print(face_names)
+#print(face_names)
 
 #We have to encode all the known person images
 # Define a function which will compute all the encodings
