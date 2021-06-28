@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 import face_recognition as fr
 import os
 from datetime import *
@@ -13,7 +12,7 @@ known_face_encoding=pickle.load(open(file_name,'rb'))
 #pred_result= loaded_model.predict([[]])
 #Create a list, which can get the images from our folder aumatically
 
-path= "C:/xampp/htdocs/Online Attendance System -PHP/uploads"  #set my path
+path= "../Automatic-Attendance-System-using-PHP-Python/uploads"  #set my path
 #images=[]
 face_names=[]
 myList=os.listdir(path) #Crab the list of images in this folder
