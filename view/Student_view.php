@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+session_start();
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,10 +22,14 @@
     </style>
 </head>
 <body>
+    
     <img src="../assets/images/logo.png" class="logo" />
-    <div id="main-content">
-        <h2>Student Records</h2>
 
+    <nav style="font-size: 6mm; position">
+        <a href="../logout.php">Log Out</a>
+    </nav>
+    <div id="main-content">
+        <center><h1>WELCOME</h1></center>
         <?php 
             //Connection
             $conn= mysqli_connect("localhost", "root","", "attendance") or die("Connection failed");
@@ -42,10 +50,11 @@
                 <th>Photo</th>
             </thead>
             <tbody>
-            <?php
-                while($row = mysqli_fetch_assoc($result)){
+                <?php
+                    while($row = mysqli_fetch_assoc($result)){
+                        if ($row['Roll']== $_SESSION['roll']){ 
 
-            ?>
+                ?>
                 <tr>
                     <td><?php echo $row['Roll']; ?></td>
                     <td><?php echo $row['Name'];?></td>
@@ -54,9 +63,36 @@
                     <td><?php echo $row['email'];?></td>
                     <td><img src="../uploads/<?php echo $row['image'];?>" style="width: 100px"></td>
                 </tr>
-                <?php } ?>
+                <?php } } ?>
             </tbody>
         </table>
+        <?php }
+        
+         $sql2= "select * from student inner join record on student.Roll= record.Roll where record.Roll= {$_SESSION['roll']}";
+         $result2= mysqli_query($conn, $sql2) or die("Date Query unseccesful"); 
+        
+        ?> 
+        <center><h1>Your Attendance sheet</h1></center>
+     <?php
+         if (mysqli_num_rows($result2) > 0) { ?>
+         
+             <table cellpadding="7px">
+                 <thead>
+                     <th>Date</th>
+                     <th>Time</th>  
+                 </thead>
+                 <tbody>
+                     <?php
+                         while ($row2=mysqli_fetch_assoc($result2)){
+                     ?>
+                     <tr>
+                         <td><?php echo $row2['Date']; ?></td> 
+                         <td><?php echo $row2['Time']; ?></td>
+                     </tr>
+    
+                     <?php } ?>
+                 </tbody>
+             </table>
         <?php }
         else{
             echo "<h2> No record Found</h2>";
