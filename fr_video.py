@@ -29,7 +29,7 @@ print(face_names)
 
 def markAttendance(name):
     now=datetime.now()
-    a=now.strftime("%d-%m-%Y %H:%M:%S")
+    a=now.strftime("%Y-%m-%d %H:%M:%S")
     x=a.split()
     date=x[0]
     time=x[1]
